@@ -15,7 +15,7 @@ import { EthereumContext } from '../context/EthereumContext';
 import { NETWORKS, ROLES, ROLE_NAMES } from '../config/contracts';
 
 export default function Navbar() {
-  const { account, network, userRole, connectWallet, disconnectWallet, switchNetwork } = useContext(EthereumContext);
+  const { account, network, userRole, disconnectWallet, switchNetwork } = useContext(EthereumContext);
 
   return (
     <AppBar position="fixed" elevation={0} sx={{ 

@@ -18,7 +18,7 @@ import { EthereumContext } from '../context/EthereumContext';
 import { ROLES, ROLE_NAMES } from '../config/contracts';
 
 export default function Dashboard() {
-  const { account, network, userRole, connectWallet } = useContext(EthereumContext);
+  const { account, network, userRole } = useContext(EthereumContext);
   const navigate = useNavigate();
 
   // Authenticated Dashboard Rendering
