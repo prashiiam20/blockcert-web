@@ -1,0 +1,83 @@
+# BlockCert — Setup Complete ✅
+
+## What Was Done
+
+| Step | Result |
+|---|---|
+| Root dependencies | ✅ Already installed |
+| Smart contract compile | ✅ Already compiled |
+| Hardhat local node | ✅ Running on `http://127.0.0.1:8545` |
+| Contract deployed | ✅ `0x5FbDB2315678afecb367f032d93F642f64180aa3` |
+| Frontend config updated | ✅ [frontend/src/config/contracts.js](file:///Applications/Prashi%20Mobile/Projects/BlockchainCertificate/frontend/src/config/contracts.js) |
+| ABI synced | ✅ [frontend/src/contracts/CertificateRegistry.json](file:///Applications/Prashi%20Mobile/Projects/BlockchainCertificate/frontend/src/contracts/CertificateRegistry.json) |
+| Contract tests | ✅ 3/3 passing |
+
+---
+
+## Contract Tests
+
+```
+CertificateRegistry
+  ✔ Should issue certificate
+  ✔ Should revoke certificate
+  ✔ Should batch issue
+
+3 passing (520ms)
+```
+
+---
+
+## Deployed Accounts & Roles
+
+| # | Address | Role |
+|---|---|---|
+| 0 | `0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266` | Admin / Government |
+| 1 | `0x70997970C51812dc3A010C7d01b50e0d17dc79C8` | Institution |
+| 2 | `0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC` | Student |
+| 3 | `0x90F79bf6EB2c4f870365E785982E1f101E93b906` | Recruiter |
+
+---
+
+## MetaMask Setup
+
+1. Open MetaMask → **Add Network** → **Add a network manually**
+
+   | Field | Value |
+   |---|---|
+   | Network Name | `Hardhat Local` |
+   | RPC URL | `http://127.0.0.1:8545` |
+   | Chain ID | `1337` |
+   | Currency Symbol | `ETH` |
+
+2. **Import Account** using a private key from below, based on the role you want:
+
+   | Role | Private Key |
+   |---|---|
+   | Admin/Gov | `0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80` |
+   | Institution | `0x59c6995e998f97a5a0044966f0945389dc9e86dae88c7a8412f4603b6b78690d` |
+   | Student | `0x5de4111afa1a4b94908f83103eb1f1706367c2e68ca870fc3fb9a804cdab365a` |
+   | Recruiter | `0x7c852118294e51e653712a81e05800f419141751be58f605c371e15141b007a6` |
+
+> **These are Hardhat test keys — never use on mainnet.**
+
+---
+
+## Running the App
+
+Frontend is already running at **http://localhost:3000**
+
+To restart the full stack any time:
+
+```bash
+# Terminal 1 — keep running
+npx hardhat node
+
+# Terminal 2 — deploy fresh contract
+npx hardhat run scripts/setup-and-deploy.js --network localhost
+```
+
+---
+
+## New Script Added
+
+[setup-and-deploy.js](file:///Applications/Prashi%20Mobile/Projects/BlockchainCertificate/scripts/setup-and-deploy.js) — One command to deploy, grant roles, update frontend config, and sync the ABI.

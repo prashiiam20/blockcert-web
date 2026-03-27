@@ -1,0 +1,14 @@
+diff --git a/node_modules/@nomicfoundation/hardhat-ethers/internal/hardhat-ethers-provider.js b/node_modules/@nomicfoundation/hardhat-ethers/internal/hardhat-ethers-provider.js
+--- a/node_modules/@nomicfoundation/hardhat-ethers/internal/hardhat-ethers-provider.js
++++ b/node_modules/@nomicfoundation/hardhat-ethers/internal/hardhat-ethers-provider.js
+@@ -189,7 +189,9 @@
+         return logs.map((l) => this._wrapLog((0, ethers_utils_1.formatLog)(l)));
+     }
+     async resolveName(_ensName) {
+-        throw new errors_1.NotImplementedError("HardhatEthersProvider.resolveName");
++        if (ethers_1.isAddress(_ensName))
++            return _ensName;
++        throw new errors_1.NotImplementedError("HardhatEthersProvider.resolveName");
+     }
+     async lookupAddress(_address) {
+         throw new errors_1.NotImplementedError("HardhatEthersProvider.lookupAddress");

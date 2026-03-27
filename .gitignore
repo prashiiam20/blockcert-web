@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Environment Variables (CRITICAL)
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+
+# Build Outputs
+/build
+/dist
+frontend/build/
+
+# Hardhat Files
+/cache
+/artifacts
+/typechain
+/typechain-types
+coverage/
+coverage.json
+/ignition/deployments/
+
+# Local/IDE Files
+.DS_Store
+.vscode/
+.idea/
+.cursor/
+
+# Project Specific
+keys/
+certificates/*.pdf
+frontend/test Accounts
