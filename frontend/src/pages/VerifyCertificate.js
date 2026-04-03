@@ -14,14 +14,12 @@ import {
   InputAdornment,
   IconButton,
   Fade,
-  Grow,
-  Tooltip
+  Grow
 } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import SecurityIcon from '@mui/icons-material/Security';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-import SearchIcon from '@mui/icons-material/Search';
 import FingerprintIcon from '@mui/icons-material/Fingerprint';
 import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import HistoryIcon from '@mui/icons-material/History';
@@ -72,6 +70,7 @@ export default function VerifyCertificate() {
         setDecryptionKey(extractedKey);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [contract, searchParams]);
 
   // Auto-trigger decryption when both certificate and key are present
@@ -83,6 +82,7 @@ export default function VerifyCertificate() {
         setTimeout(() => handleDecrypt(), 500); // Small delay for visual effect
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [certificate, decryptionKey]);
 
   const handleVerify = async (manualId) => {

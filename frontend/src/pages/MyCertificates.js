@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useContext, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import {
   Container,
   Paper,
@@ -18,27 +18,20 @@ import {
   AccordionDetails,
   Avatar,
   InputAdornment,
-  Dialog,
-  DialogContent,
-  DialogActions,
   IconButton,
   Tooltip,
   Divider,
   Drawer,
   List,
-  ListItem,
-  ListItemText,
-  ListItemIcon
+  ListItem
 } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import BusinessIcon from '@mui/icons-material/Business';
 import FolderIcon from '@mui/icons-material/Folder';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SearchIcon from '@mui/icons-material/Search';
-import PrintIcon from '@mui/icons-material/Print';
 import CloseIcon from '@mui/icons-material/Close';
 import BrandedQR from '../components/BrandedQR';
-import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { EthereumContext } from '../context/EthereumContext';
