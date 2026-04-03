@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Box, Typography, Button, Tooltip, IconButton } from '@mui/material';
+import { Box, Typography, Button, Tooltip } from '@mui/material';
 import { QRCodeSVG } from 'qrcode.react';
 import DownloadIcon from '@mui/icons-material/Download';
 import InfoIcon from '@mui/icons-material/Info';

@@ -21,20 +21,15 @@ import {
   Tab,
   Divider
 } from '@mui/material';
-import { BarChart } from '@mui/x-charts/BarChart';
 import { useNavigate } from 'react-router-dom';
 import SchoolIcon from '@mui/icons-material/School';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import GroupIcon from '@mui/icons-material/Group';
 import BatchPredictionIcon from '@mui/icons-material/BatchPrediction';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import AssessmentIcon from '@mui/icons-material/Assessment';
-import HistoryIcon from '@mui/icons-material/History';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import PublicIcon from '@mui/icons-material/Public';
 import PersonIcon from '@mui/icons-material/Person';
 import { EthereumContext } from '../context/EthereumContext';
-import { ROLES, ROLE_NAMES, NETWORKS } from '../config/contracts';
+import { ROLES, NETWORKS } from '../config/contracts';
 
 export default function Dashboard() {
   const { account, network, userRole, contract } = useContext(EthereumContext);
