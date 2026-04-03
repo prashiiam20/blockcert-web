@@ -45,8 +45,8 @@ export default function ManageRoles() {
 
   // Permission check: Role must be GOVERNMENT/REGULATORY OR user must be the contract admin
   const isAuthorized = 
-    userRole == ROLES.GOVERNMENT || 
-    userRole == ROLES.REGULATORY || 
+    Number(userRole) === ROLES.GOVERNMENT || 
+    Number(userRole) === ROLES.REGULATORY || 
     (account && adminAddress && account.toLowerCase() === adminAddress.toLowerCase());
 
   if (!isAuthorized) {

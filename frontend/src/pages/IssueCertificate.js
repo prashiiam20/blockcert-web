@@ -12,8 +12,6 @@ import {
   Card,
   CardContent,
   Divider,
-  IconButton,
-  Tooltip,
   Stepper,
   Step,
   StepLabel,
@@ -28,7 +26,6 @@ import {
   Stack,
   Chip
 } from '@mui/material';
-import { QRCodeSVG } from 'qrcode.react';
 import { EthereumContext } from '../context/EthereumContext';
 import { ethers } from 'ethers';
 import axios from 'axios';
@@ -43,14 +40,9 @@ import SecurityIcon from '@mui/icons-material/Security';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import OfflineBoltIcon from '@mui/icons-material/OfflineBolt';
-import ShareIcon from '@mui/icons-material/Share';
-import LinkIcon from '@mui/icons-material/Link';
-import BrandedQR from '../components/BrandedQR';
 import { BarChart } from '@mui/x-charts/BarChart';
 import AssessmentIcon from '@mui/icons-material/Assessment';
-import ShieldIcon from '@mui/icons-material/Shield';
 import PublicIcon from '@mui/icons-material/Public';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -110,7 +102,7 @@ function PreviewCard({ data, file }) {
 const steps = ['Identity', 'Academic Details', 'Secure Packaging'];
 
 export default function IssueCertificate() {
-  const { contract, network, account } = useContext(EthereumContext);
+  const { contract, account } = useContext(EthereumContext);
   const [activeStep, setActiveStep] = useState(0);
   const [stats, setStats] = useState({ totalIssued: 0, chartData: [] });
   const [loadingVolume, setLoadingVolume] = useState(true);
@@ -220,8 +212,6 @@ export default function IssueCertificate() {
       const key = ethers.utils.arrayify(keyHash);
       const hexDecryptionKey = keyHash.startsWith('0x') ? keyHash.substring(2) : keyHash;
       
-      const isSovereign = false; // "Sovereign" usually means student-owned, here it is Institutionally-Sovereign
-
       const nonce = new Uint8Array(12);
       window.crypto.getRandomValues(nonce);
 
